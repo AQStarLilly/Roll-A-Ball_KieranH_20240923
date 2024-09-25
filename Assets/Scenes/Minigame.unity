@@ -1949,7 +1949,7 @@ MonoBehaviour:
   Player: {fileID: 691386021}
   visionAngle: 30
   visionDistance: 10
-  moveSpeed: 2
+  moveSpeed: 5
   chaseDistance: 3
 --- !u!54 &1825443054
 Rigidbody:
