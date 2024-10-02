@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -13,6 +14,7 @@ public class EnemyController : MonoBehaviour
     public float visionDistance = 10f;
     public float moveSpeed = 2f;
     public float chaseDistance = 3f;
+    
 
     private Vector3? lastKnownPlayerPosition;
     // Start is called before the first frame update
@@ -27,6 +29,13 @@ public class EnemyController : MonoBehaviour
         Vector3 lookAt = Player.position;
         lookAt.y = transform.position.y;
         transform.LookAt(lookAt);
+
+        Vector3 displacement = Player.position - transform.position;
+        displacement = displacement.normalized;
+        if(Vector2.Distance(Player.position, transform.position) > 1.0f)
+        {
+            transform.position += (displacement * moveSpeed * Time.deltaTime);
+        }
     }
 
     void FixedUpdate()
@@ -68,3 +77,6 @@ public class EnemyController : MonoBehaviour
     }
 }
 
+//Vector3 lookAt = Player.position;
+//lookAt.y = transform.position.y;
+//transform.LookAt(lookAt);
