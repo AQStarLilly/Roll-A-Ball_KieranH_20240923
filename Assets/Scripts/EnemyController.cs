@@ -14,33 +14,46 @@ public class EnemyController : MonoBehaviour
     public float visionDistance = 10f;
     public float moveSpeed = 2f;
     public float chaseDistance = 3f;
-    
 
     private Vector3? lastKnownPlayerPosition;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindObjectOfType<PlayerController>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 lookAt = Player.position;
-        lookAt.y = transform.position.y;
+        Vector3 lookAt = new Vector3(Player.position.x, Player.position.y, Player.position.z);
         transform.LookAt(lookAt);
 
         Vector3 displacement = Player.position - transform.position;
-        displacement = displacement.normalized;
-        if(Vector2.Distance(Player.position, transform.position) > 1.0f)
+        displacement.y = 0;
+
+        if (Vector3.Distance(new Vector3(Player.position.x, 0, Player.position.z), new Vector3(transform.position.x, 0, transform.position.z)) > 0.5f)
         {
-            transform.position += (displacement * moveSpeed * Time.deltaTime);
+            transform.position += displacement.normalized * moveSpeed * Time.deltaTime;
+        }
+        CheckForPlayerContact();
+    }
+
+    void CheckForPlayerContact()
+    {
+        if (Vector3.Distance(Player.position, transform.position) < 1f)
+        {
+            PlayerController playerController = Player.GetComponent<PlayerController>();
+            if(playerController != null)
+            {
+                playerController.ResetPosition();
+            }
         }
     }
 
     void FixedUpdate()
     {
-
+        
     }
 
     void Look()
@@ -77,6 +90,3 @@ public class EnemyController : MonoBehaviour
     }
 }
 
-//Vector3 lookAt = Player.position;
-//lookAt.y = transform.position.y;
-//transform.LookAt(lookAt);

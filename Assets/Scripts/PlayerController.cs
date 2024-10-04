@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     private int count;
     private float movementX;
     private float movementY;
+    private Vector3 startPoint;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,7 @@ public class PlayerController : MonoBehaviour
         count = 0;
         SetCountText();
         winTextObject.SetActive(false);
+        startPoint = transform.position;  //store initial position
     }    
 
     void OnMove (InputValue movementValue)
@@ -45,6 +48,11 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(movement * speed);
     }
 
+    public void ResetPosition()
+    {
+        transform.position = startPoint;  //move player back to start position      
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("PickUp"))
@@ -52,6 +60,6 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
             count = count + 1;
             SetCountText();
-        }       
+        }        
     }
 }
