@@ -821,7 +821,7 @@ GameObject:
   - component: {fileID: 691386017}
   - component: {fileID: 691386023}
   - component: {fileID: 691386022}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -954,8 +954,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  jumpForce: 7
   countText: {fileID: 1242990933}
   winTextObject: {fileID: 1690656366}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 55
+  raycastDistance: 0.6
 --- !u!114 &691386023
 MonoBehaviour:
   m_ObjectHideFlags: 0
