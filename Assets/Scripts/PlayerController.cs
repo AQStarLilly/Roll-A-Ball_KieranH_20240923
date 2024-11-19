@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
     private int count;
+    private int totalCount;
     private float movementX;
     private float movementY;
     private Vector3 startPoint;
@@ -27,15 +28,25 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         count = 0;
+        totalCount = GameObject.FindGameObjectsWithTag("PickUp").Length;
         SetCountText();
         winTextObject.SetActive(false);
         startPoint = transform.position;  //store initial position
     }    
 
-    void SetCountText()
+    /*void SetCountText()
     {
         countText.text = "Count: " + count.ToString();
         if(count >= 8)
+        {
+            winTextObject.SetActive(true);
+        }
+    } */
+
+    void SetCountText()
+    {
+        countText.text = $"{count}/{totalCount}";
+        if(count >= totalCount)
         {
             winTextObject.SetActive(true);
         }
@@ -64,11 +75,22 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        Vector3 movement = new Vector3(movementX, 0.0f, movementY);   //get movement input
 
-        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
-        rb.AddForce(movement * speed);
+        //Get the camera's forward and right directions
+        Vector3 cameraForward = Camera.main.transform.forward;  
+        Vector3 cameraRight = Camera.main.transform.right;
+
+        //Ignore vertical components of the camera direction
+        cameraForward.y = 0;
+        cameraRight.y = 0;
+
+        //Normalize to ensure consistent movement
+        cameraForward.Normalize();
+        cameraRight.Normalize();
+
+        Vector3 adjustedMovement = cameraRight * movement.x + cameraForward * movement.z;  //Adjust movement to align with camera
+        rb.AddForce(adjustedMovement * speed);  //Apply movement force to the Rigidbody
     }
 
     public void ResetPosition()
