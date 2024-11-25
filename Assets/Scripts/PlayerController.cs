@@ -34,15 +34,6 @@ public class PlayerController : MonoBehaviour
         startPoint = transform.position;  //store initial position
     }    
 
-    /*void SetCountText()
-    {
-        countText.text = "Count: " + count.ToString();
-        if(count >= 8)
-        {
-            winTextObject.SetActive(true);
-        }
-    } */
-
     void SetCountText()
     {
         countText.text = $"{count}/{totalCount}";
