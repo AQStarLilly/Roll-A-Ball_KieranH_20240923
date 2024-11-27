@@ -12736,8 +12736,40 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1777609720}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -6136898318333320845, guid: 541253a31fb818e48831a4a474268987,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 547551908}
   m_SourcePrefab: {fileID: 100100000, guid: 541253a31fb818e48831a4a474268987, type: 3}
+--- !u!1 &547551907 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6136898318333320845, guid: 541253a31fb818e48831a4a474268987,
+    type: 3}
+  m_PrefabInstance: {fileID: 547551906}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &547551908
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547551907}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2921893806466477118, guid: 541253a31fb818e48831a4a474268987, type: 3}
 --- !u!1 &548095858 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1354968875968715739, guid: db8b5a0bbb9009742829e291056fc23a,
@@ -19355,8 +19387,40 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1393102671}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8749673130199004550, guid: b017ba4816e66d54189fb8a56e882c40,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 966274789}
   m_SourcePrefab: {fileID: 100100000, guid: b017ba4816e66d54189fb8a56e882c40, type: 3}
+--- !u!1 &966274788 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8749673130199004550, guid: b017ba4816e66d54189fb8a56e882c40,
+    type: 3}
+  m_PrefabInstance: {fileID: 966274787}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &966274789
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966274788}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2727242734697340596, guid: b017ba4816e66d54189fb8a56e882c40, type: 3}
 --- !u!4 &966508324 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: db8b5a0bbb9009742829e291056fc23a,
@@ -32258,8 +32322,40 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1343334563}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4461974186613066846, guid: 6b0c510b828abef419abeaaa7fca9a26,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1488493524}
   m_SourcePrefab: {fileID: 100100000, guid: 6b0c510b828abef419abeaaa7fca9a26, type: 3}
+--- !u!1 &1488493523 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4461974186613066846, guid: 6b0c510b828abef419abeaaa7fca9a26,
+    type: 3}
+  m_PrefabInstance: {fileID: 1488493522}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1488493524
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488493523}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1108398665472106934, guid: 6b0c510b828abef419abeaaa7fca9a26, type: 3}
 --- !u!4 &1488646192 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5e76096fe087f81409b33f62a1980c90,
@@ -41276,7 +41372,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 20c36636aa289414daed1151be7b794c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.45
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
