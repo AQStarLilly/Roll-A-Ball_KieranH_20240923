@@ -14932,6 +14932,8 @@ MonoBehaviour:
   jumpForce: 7
   countText: {fileID: 1242990933}
   winTextObject: {fileID: 1690656366}
+  pickupSound: {fileID: 8300000, guid: 5f539046e19551c418e70f5c2ee9cb9c, type: 3}
+  soundVolume: 20
   groundLayer:
     serializedVersion: 2
     m_Bits: 55
@@ -40873,7 +40875,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 20c36636aa289414daed1151be7b794c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.45
   m_Pitch: 1
   Loop: 1
   Mute: 0

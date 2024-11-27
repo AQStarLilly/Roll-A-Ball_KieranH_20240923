@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 7f;
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
+    public AudioClip pickupSound;
+    public float soundVolume = 20.0f;
 
     private Rigidbody rb;
     private int count;
@@ -93,6 +95,11 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PickUp"))
         {
+            if(pickupSound != null)
+            {
+                AudioSource.PlayClipAtPoint(pickupSound, other.transform.position, soundVolume);
+            }
+
             other.gameObject.SetActive(false);
             count = count + 1;
             SetCountText();
